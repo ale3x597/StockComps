@@ -1,11 +1,49 @@
-# Getting Started with Create React App
+# Yet Another Budgeting Tool
+*We Are Excited to Start Working on the stock card for our group project!*
+## Getting Started with our Stock Components
+### Visual & Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Graphic chart with vectors, future graphic data based on historical charts.
+- Favorite stocks, Top Performing stocks based on gains and losses. 
+- Allows users to get a stock ticker card beside their budget of their preferred stocks. 
+- Defaults to Nasdaq and Fortune 500 stocks but has the ability to have more added allowing for a personalized approach of their favorite stocks at a quick glance.
+ ### Logic 
+- Stock ticker and user portfolio data models (price, high, low, volume, )
+- Data/file parsing algorithms
+- Data organizing data structures
+- Calculation algorithms
+- Feature to create custom stock watch list (add, delete, modify)
+- Notifications (track stock performances and alert)
 
-## Available Scripts
+### Dependencies
+- SpringBoot 
+- AlphaVantage(JSON)
+- RESTFUL 
+- Cloud9QL to Query Stock data 
 
-In the project directory, you can run:
+### Database Information
+- Favorite Stocks
+- Stocks Logo / ticker Name
+- Data From Third Parties 
+- History 
+- Projection
+- Price
 
+### Tasks
+
+- [x] Define what we want to create
+- [x] Locate resources that may be needed
+- [x] Understand what needs to be achieved 
+- [x] Begin production
+- [x] Initialize project with a front end
+- [ ] Initialize backend
+- [ ] Implement backend and other resources 
+- [ ] Connect back to front
+
+
+
+
+## Other Information for Project
 ### `npm start`
 
 Runs the app in the development mode.\
