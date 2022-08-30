@@ -1,5 +1,5 @@
 # Yet Another Budgeting Tool
-*We Are Excited to Start Working on the stock card for our group project!*
+*Excited to Start Working on the stock card for our group project!*
 ## Getting Started with our Stock Components
 ### Visual & Description
 
@@ -28,17 +28,39 @@
 - History 
 - Projection
 - Price
+## Backend Layout
+
+- Currency Exchange
+- ExchangeRate
+- Physical currency exchange from_currency and to_currency
+- ExchangeRateRequest
+- ExchangeRateResponse
+
+ ### API file stucture AlphaVantage 
+
+- Config
+- Url extractor
+- GraphQL
+- Repository
+- Controller
+- Config
+
+
 
 ### Tasks
 
 - [x] Define what we want to create
 - [x] Locate resources that may be needed
 - [x] Understand what needs to be achieved 
+- [x] Update Documentation
 - [x] Begin production
 - [x] Initialize project with a front end
-- [ ] Initialize backend
+- [x] Initialize backend
 - [ ] Implement backend and other resources 
 - [ ] Connect back to front
+
+## Projected Sketch
+![Web Design](Diagram.drawio.png)
 
 
 
