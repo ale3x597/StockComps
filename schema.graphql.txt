@@ -1,0 +1,179 @@
+scalar Date;
+
+scalar Timestamp;
+
+scalar DateTime;
+
+scalar Interval;
+
+
+
+type Query {
+
+	stock(symbol: String!, outputsize: String, datatype: String, interval: Interval): Stock
+
+	symbolSearch(keywords: String!,datatype: String): [SymbolSearchResult]
+
+	foreignExchange(from_symbol: String!,to_symbol: String!,interval:String): ForeignExchange!
+
+
+}
+
+type Company {
+	stock(symbol: String, outputsize: String, datatype: String, interval: Interval): Stock
+}
+
+type ExchangeRates {
+	ask_price:Float!
+	bid_price:Float!
+	exchange_rate:Float!
+	from_currency_code:String!
+	from_currency_name:String!
+	last_refreshed:Timestamp!
+	time_zone:String!
+	to_currency_code:String!
+	to_currency_name:String!
+
+}
+
+type Stock {
+	#	{
+	#	    "01. symbol": "MSFT"
+	#	    "02. open": "129.7000"
+	#	    "03. high": "130.5152"
+	#	    "04. low": "129.0300"
+	#	    "05. price": "129.8450"
+	#	    "06. volume": "12284431"
+	#	    "07. latest trading day": "2019-04-26"
+	#	    "08. previous close": "129.1500"
+	#	    "09. change": "0.6950"
+	#	    "10. change percent": "0.5381%"
+	#	}
+
+	change:Float!
+	change_percent:String!
+	close:Float
+	date:Date!
+	high:Float!
+	low:Float!
+	open:Float!
+	previous_close:Float!
+
+	price:Float!
+	volume:Float!
+
+	adjusted_close:Float
+	dividend_amount:Float
+	split_coefficient:Float
+
+	#	{
+	#	    "1. Information": "Daily Prices (open, high, low, close) and Volumes"
+	#	    "2. Symbol": "MSFT"
+	#	    "3. Last Refreshed": "2019-04-26 12:51:19"
+	#	    "4. Output Size": "Compact"
+	#	    "5. Time Zone": "US/Eastern"
+	#	}
+	# OR
+	#	{
+	#        "1. Information": "Intraday (5min) open, high, low, close prices and volume"
+	#        "2. Symbol": "MSFT"
+	#        "3. Last Refreshed": "2019-04-26 12:45:00"
+	#        "4. Interval": "5min"
+	#        "5. Output Size": "Compact"
+	#        "6. Time Zone": "US/Eastern"
+	#    }
+
+	# Sock & TimeSeriesMetaData
+	symbol: String!
+
+	# TimeSeriesMetaData
+	information:String
+	last_refreshed:DateTime
+	output_size:String
+	time_zone:String
+	interval:Interval
+
+
+
+	data:[StockData]
+}
+
+type StockData {
+	#	{
+	#	    "1. open": "118.9500"
+	#	    "2. high": "131.3700"
+	#	    "3. low": "118.1000"
+	#	    "4. close": "129.8470"
+	#	    "5. adjusted close": "129.8470"
+	#	    "6. volume": "379827816"
+	#	    "7. dividend amount": "0.0000"
+	#	}
+
+	close:Float
+	date:Date!
+	high:Float!
+	low:Float!
+	open:Float!
+	volume:Float!
+
+	adjusted_close:Float
+	dividend_amount:Float
+
+	split_coefficient:String
+}
+
+type SymbolSearchResult {
+	#	{
+	#		"1. symbol": "BA"
+	#		"2. name": "The Boeing Company"
+	#		"3. type": "Equity"
+	#		"4. region": "United States"
+	#		"5. marketOpen": "09:30"
+	#		"6. marketClose": "16:00"
+	#		"7. timezone": "UTC-04"
+	#		"8. currency": "USD"
+	#		"9. matchScore": "1.0000"
+	#	}
+
+	currency:String!
+	marketclose:String!
+	marketopen:String!
+	matchscore:Float!
+	name:String!
+	region:String!
+	symbol:String!
+	timezone:String!
+	type:String!
+}
+
+type ForeignExchange {
+	from_currency_code: String
+	from_currency_name: String
+	to_currency_code: String
+	to_currency_name: String
+	exchange_rate: String
+	bid_price: String
+	ask_price: String
+
+	data:[ForeignExchangeData]
+	from_symbol:String!
+	information:String!
+	interval:Interval!
+	last_refreshed:Timestamp!
+	output_size:String
+	time_zone:String!
+	to_symbol:String!
+}
+
+type ForeignExchangeData {
+	close:Float!
+	date:DateTime!
+	high:Float!
+	low:Float!
+	open:Float!
+}
+
+
+
+
+
