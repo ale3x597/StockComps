@@ -1,9 +1,9 @@
 
-import Card from './shared/Card'
+import Card from '../shared/Card'
 import Plot from 'react-plotly.js';
 import React, { Component } from 'react'
 
-export class Stock extends Component {
+export class IBM extends Component {
   constructor(props) {
     super(props)
     this.state ={
@@ -50,25 +50,26 @@ export class Stock extends Component {
 
   render() {
     return (
-      <Card>
-        <Plot
-        data={[
-          {
-            x: this.state.stockChartXValues,
-            y: this.state.stockChartYValues,
-            type: 'scatter',
-            mode: 'lines+markers',
-            marker: {color: 'red'},
-          }
-        ]}
-        layout={ {width: 520, height: 440, title: 'IBM Stock Graph'} }
-      />
-      </Card>
+     
+        <Card>
+          <Plot
+            data={[
+              {
+                x: this.state.stockChartXValues,
+                y: this.state.stockChartYValues,
+                type: 'scatter',
+                mode: 'lines+markers',
+                marker: {color: 'blue'},
+              }
+            ]}
+            layout={ {width: 520, height: 440, title: 'IBM Stock Graph'} }
+          />
+        </Card>
     )
   }
 }
 
-export default Stock
+export default IBM
 
 
 

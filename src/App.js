@@ -3,7 +3,8 @@ import './App.css';
 import Search from './Components/Search';
 //import axios from 'axios';
 //import React, {useState, useEffect} from 'react';
-import Stock from './Components/Stock';
+import Graph1 from './Components/Stocks/IBM';
+import Graph2 from './Components/Stocks/Tesla';
 
 function App() {
  
@@ -20,7 +21,8 @@ function App() {
     <div className="container">
       <Header/>
       <Search/>
-      <Stock/>
+      <Graph1/>
+      <Graph2/>
     </div>
   );
 }
